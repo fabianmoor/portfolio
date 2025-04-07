@@ -1,0 +1,433 @@
+/* Basic Reset / Normalize (Consider using a full reset/normalize file) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Lato', sans-serif; /* Fallback font */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Variables (Good Practice) */
+:root {
+    --primary-color: #007bff; /* Example blue */
+    --secondary-color: #6c757d; /* Example grey */
+    --background-light: #ffffff;
+    --background-dark: #343a40;
+    --text-light: #f8f9fa;
+    --text-dark: #333;
+    --heading-font: 'Montserrat', sans-serif;
+}
+
+/* General Container */
+section {
+    padding: 60px 20px; /* Vertical and horizontal padding */
+    max-width: 1100px; /* Limit content width */
+    margin: 0 auto; /* Center sections */
+    overflow-x: hidden; /* Prevent horizontal scrollbars from animations */
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header & Navigation */
+header {
+    background-color: var(--background-light);
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Makes header stick to top */
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+nav .logo {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: darken(var(--primary-color), 10%);
+    text-decoration: none;
+}
+
+.about-details {
+  display: flex;
+  align-items: center;
+  gap: 300px;
+  margin-top: 1em;
+}
+
+.about-details p {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+}
+
+.about-details img {
+  max-width: 150px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 80vh; /* Make it take up most of the viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #e9ecef; /* Light background */
+    /* Optional: background-image: url('../images/hero-bg.jpg'); background-size: cover; */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.hero-content .subtitle {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: darken(var(--primary-color), 10%);
+    text-decoration: none;
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* --- NEW CSS for About Section Two-Column Layout --- */
+
+.about-layout-container {
+    display: flex;          /* Enable Flexbox for side-by-side columns */
+    align-items: flex-start; /* Align items to the top (or use 'center') */
+    gap: 40px;             /* Space between the text and image columns (adjust) */
+    /* Inherits max-width from .about-section */
+}
+
+.about-text-column {
+    flex: 1;               /* Allows text column to take available space */
+    min-width: 0;          /* Prevents text overflow issues */
+}
+
+.about-text-column h2 {
+    text-align: center;    /* Center heading OVER the text column */
+    /* Optionally add margin-bottom if needed, but h2 already has it */
+    /* You can remove the previous '.about-section h2 { text-align: left; }' rule now */
+}
+
+.about-text-column p {
+    text-align: left;      /* Ensure paragraphs are left-aligned */
+     /* Reset max-width if it was set previously */
+     max-width: none;
+}
+
+
+.about-image-column {
+    flex-shrink: 0;        /* Prevent image column from shrinking */
+    /* Width will be determined by the image content up to its max-width */
+}
+
+.about-image-column img { /* Styles for the image itself */
+    display: block;        /* Removes extra space below inline images */
+    max-width: 200px;      /* Max width for the image (adjust as needed) */
+    height: auto;          /* Maintain aspect ratio */
+    border-radius: 8px;    /* Optional: Add rounded corners */
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--primary-color);
+}
+
+.skills-list {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.skills-list ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap; /* Allow skills to wrap */
+    justify-content: center; /* Center skills */
+    gap: 10px; /* Space between skill items */
+}
+
+.skills-list li {
+    background-color: #e9ecef;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+
+/* Projects Section */
+.projects-section {
+    background-color: #f9f9f9; /* Slightly different background */
+}
+
+.project-grid {
+    display: grid;
+    /* Adjust columns based on screen size */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Space between project cards */
+}
+
+.project-card {
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Keep image corners rounded */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+}
+
+.project-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistency */
+    object-fit: cover; /* Crop image nicely */
+    display: block;
+}
+
+.project-card h3 {
+    font-size: 1.3rem;
+    margin-top: 15px;
+    padding: 0 20px;
+}
+
+.project-card p {
+    padding: 0 20px;
+    flex-grow: 1; /* Allow description to take available space */
+    font-size: 0.95rem;
+}
+
+.project-tags {
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.project-tags span {
+    background-color: #e9ecef;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+}
+
+.project-links {
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    margin-top: 10px; /* Add space above links */
+}
+
+.project-links a {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: var(--text-light);
+}
+
+.contact-section p {
+    color: #ccc; /* Lighter grey for paragraph text */
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+.contact-info a {
+    color: var(--text-light);
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+.contact-info a:hover {
+     color: var(--primary-color);
+     text-decoration: none;
+}
+
+.contact-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-right: 15px; /* Space before other links */
+}
+
+.contact-button:hover {
+    background-color: darken(var(--primary-color), 10%);
+    text-decoration: none;
+}
+
+/* Contact Form (Optional) Styling */
+form {
+    max-width: 600px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    background-color: #495057;
+    color: var(--text-light);
+    border-radius: 4px;
+}
+form button {
+    /* Reuse cta-button styles or create new */
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+form button:hover {
+     background-color: darken(var(--primary-color), 10%);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px; /* Space above footer */
+    background-color: #e9ecef;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Responsive Design (Example Breakpoints) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    nav ul {
+        /* Basic example: Hide desktop nav, implement JS toggle later */
+        display: none;
+        /* Or stack them:
+           flex-direction: column;
+           position: absolute;
+           top: 60px; // Adjust based on header height
+           right: 0;
+           background-color: white;
+           width: 100%;
+           text-align: center;
+        */
+    }
+    /* Add styles for mobile menu button and toggled nav */
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Stack projects on smaller screens */
+    }
+    .hero-section {
+        min-height: 60vh;
+    }
+    .about-content {
+         flex-direction: column; /* Ensure stacking */
+    }
+}

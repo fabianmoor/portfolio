@@ -1,0 +1,15 @@
+.title {
+  font-family: Arial;
+  color: white;
+  text-align: leading;
+}
+
+.tile_top {
+  background-color: #fffff;
+}
+
+.sub-title {
+  color: white;
+  text-align: leading;
+  font-family: Arial;
+}

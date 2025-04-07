@@ -1,3 +1,133 @@
-<html>
-  <head>Hello</Head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabian Moor Pucar - Portfolio</title>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Dev Fabian</div>
+              <ul>
+                  <li><a href="#hero">Home</a></li>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#projects">Projects</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <h1 data-aos="fade-down">Hi, I'm Fabian</h1>
+                <p data-aos="fade-left" class="subtitle">Student in Software Technology</p>
+                <p data-aos="fade-up">Follow my progress.</p>
+                <a data-aos="fade-up" data-aos-delay="150" href="#projects" class="cta-button">View My Work</a>
+            </div>
+        </section>
+          <section id="about" class="about-section">
+              <div class="about-layout-container">
+                  <div class="about-text-column">
+                      <h2 data-aos="fade-right">About Me</h2>
+                      <p data-aos="fade-up">
+                          My journey into coding started well before
+                          I commenced my university studies in Fall 2024.
+                          While years of self-teaching
+                          provided a strong practical base, my formal academic
+                          pursuits have significantly broadened my perspective
+                          and deepened my theoretical understanding. I possess
+                          a genuine curiosity and a drive to learn, finding
+                          particular satisfaction in mastering the intricate
+                          or foundational concepts that underpin technology.
+                          I thrive on complexity and the pursuit of in-depth
+                          knowledge.
+                      </p>
+                      <p data-aos="fade-up">
+                        I also have a passion for music, growing a beard
+                        <i><b>(I'm trying... But I got a thick moustache!)</b></i>
+                        .
+                      </p>
+                  </div>
+                  <div class="about-image-column" data-aos="fade-left"> <img class="MeImage" src="./images/me.webp" alt="me">
+                  </div>
+              </div> <div class="skills-list" data-aos="fade-up">
+                  <h3>Key Skills:</h3>
+                  <ul>
+                      <li>Python 3.9+</li>
+                      <li>Java</li>
+                      <li>Bash</li>
+                      <li>C</li>
+                      <li>Lua</li>
+                      <li>Git & GitHub</li>
+                  </ul>
+              </div>
+          </section>
+        <section id="projects" class="projects-section">
+            <h2 data-aos="fade-up">My Projects</h2>
+            <div class="project-grid">
+
+                <div class="project-card" data-aos="flip-left">
+                    <img src="images/project1-screenshot.jpg" alt="Project 1 Screenshot">
+                    <h3>Project Title 1</h3>
+                    <p>A brief description of the project, its purpose, and your role.</p>
+                    <div class="project-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+                    </div>
+                </div>
+
+                <div class="project-card" data-aos="flip-left" data-aos-delay="100">
+                    <img src="images/project2-screenshot.jpg" alt="Project 2 Screenshot">
+                    <h3>Project Title 2</h3>
+                    <p>Another project description. Highlight key features or challenges.</p>
+                     <div class="project-tags">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>API</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        <a href="#" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+                    </div>
+                </div>
+
+                </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <h2 data-aos="fade-down">Get In Touch</h2>
+            <p data-aos="fade-up">Feel free to reach out!</p>
+            <div class="contact-info" data-aos="zoom-in">
+                <a href="mailto:fabbe142@gmail.com" class="contact-button">Email Me</a>
+                <a href="https://www.linkedin.com/in/fabianmoorpucar/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/fabianmoor" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+         </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Fabian Moor Pucar. All rights reserved.</p>
+        </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
